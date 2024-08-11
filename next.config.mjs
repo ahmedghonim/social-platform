@@ -1,4 +1,18 @@
+import createNextIntlPlugin from "next-intl/plugin";
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const withNextIntl = createNextIntlPlugin();
 
-export default nextConfig;
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      use: ["@svgr/webpack"],
+    });
+    return config;
+  },
+};
+
+export default withNextIntl(nextConfig);

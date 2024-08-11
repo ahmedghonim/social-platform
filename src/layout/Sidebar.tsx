@@ -48,7 +48,7 @@ const menuItems: MenuItemData[] = [
   },
   {
     icon: Ads_click,
-    label: "Create advertisement",
+    label: "Create advertise",
   },
   {
     icon: workspace_premium,
@@ -58,20 +58,24 @@ const menuItems: MenuItemData[] = [
 
 const Sidebar: React.FC = () => {
   return (
-    <nav className="flex w-fit flex-col gap-8 z-[-1] overflow-y-auto h-full self-start pt-[50px] pb-[46px] text-base font-semibold bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] text-neutral-700">
-      <MenuItem icon={Home} label="News Feed" className="ms-10 max-md:ml-2.5" />
+    <nav className=" w-[80px] flex 2xl:w-fit flex-col gap-8 z-[1] overflow-y-scroll h-full self-start pt-[50px] pb-[46px] text-base font-semibold bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] text-neutral-700">
+      <MenuItem icon={Home} label="News Feed" className="2xl:ms-10" />
 
       <TrendHashtags />
-      <div className="flex flex-col gap-8 items-start px-10 w-full max-md:px-5">
-        {menuItems.map((item, index) => (
-          <MenuItem key={index} icon={item.icon} label={item.label} />
-        ))}
-      </div>
+
+      {menuItems.map((item, index) => (
+        <MenuItem
+          key={index}
+          icon={item.icon}
+          label={item.label}
+          className="2xl:ms-10"
+        />
+      ))}
 
       <MenuItem
         icon={settings}
         label="Settings"
-        className="ms-10 max-md:ml-2.5 mt-auto"
+        className="2xl:ms-10 mt-auto"
       />
     </nav>
   );

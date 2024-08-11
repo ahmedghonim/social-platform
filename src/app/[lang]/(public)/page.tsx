@@ -76,7 +76,7 @@ export default function HomePage() {
         </SocialPost>
       </div>
 
-      <div className="w-[350px] me-[165px] flex flex-col gap-5">
+      <div className="w-[350px] 2xl:me-[165px] me-[99px] flex flex-col gap-5">
         <ProfileCard />
         <div className="sticky top-0 flex flex-col gap-5">
           <TrendingHashtags />

@@ -15,7 +15,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   description,
 }) => {
   return (
-    <article className="grid grid-cols-2 gap-3  bg-gray-200  rounded-[15px]">
+    <article className="grid grid-cols-2 gap-3 bg-gray-200 rounded-[15px]">
       <div className="h-full rounded-[15px]">
         <Image
           loading="lazy"

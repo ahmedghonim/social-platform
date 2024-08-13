@@ -23,14 +23,10 @@
 /* Normal weight (400) */
 @font-face {
   font-family: "segoeui";
-  src: url("../../fonts/seguisb.ttf") format("ttf"),
-    url("../../fonts/segoeuisl.ttf") format("ttf"),
-    url("../../fonts/segoeuil.ttf") format("ttf"),
-    url("../../fonts/segoeuii.ttf") format("ttf"),
-    url("../../fonts/segoeuiz.ttf") format("ttf");
+  src: url("../../fonts/seguibli.ttf") format("ttf");
 }
 
 /* Apply the custom font to your elements */
-body {
+* {
   font-family: "segoeui", sans-serif;
 }

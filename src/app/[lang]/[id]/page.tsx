@@ -4,7 +4,6 @@ import { EmblaOptionsType } from "embla-carousel";
 import image_30 from "@/image/image_30.png";
 import aqsa from "@/image/aqsa.png";
 import avatar from "@/image/avatar.png";
-import watch from "@/image/watch.png";
 import "./css/embla.css";
 import EmblaCarousel from "./EmblaCarousel";
 import { getStory } from "@/actions/story";

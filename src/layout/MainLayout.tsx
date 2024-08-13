@@ -19,7 +19,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
         <RightSidebar />
       </div>
       <div className="absolute bottom-[48px] end-[131px] cursor-pointer active:scale-95">
-        <Frame />
+        <Frame className="size-[60px]" />
       </div>
     </main>
   );

@@ -58,7 +58,7 @@ const menuItems: MenuItemData[] = [
 
 const Sidebar: React.FC = () => {
   return (
-    <nav className=" w-[80px] flex 2xl:w-fit flex-col gap-8 z-[1] overflow-y-scroll h-full self-start pt-[50px] pb-[46px] text-base font-semibold bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] text-neutral-700">
+    <nav className=" w-[80px] flex 2xl:w-[282px] flex-col gap-8 z-[1] overflow-y-auto h-full self-start pt-[50px] pb-[46px] text-base font-semibold bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] text-neutral-700">
       <MenuItem icon={Home} label="News Feed" className="2xl:ms-10" />
 
       <TrendHashtags />

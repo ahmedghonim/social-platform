@@ -12,6 +12,7 @@ export default function HomePage() {
   return (
     <div className="flex">
       <div className="w-[630px] mx-[31px] space-y-[14px]">
+        <UsersStory />
         <SocialPost
           noComments
           user={{
@@ -144,6 +145,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = ({
 import React from "react";
 import Image from "next/image";
 import ProductList from "@/components/ProductList";
+import UsersStory from "@/components/UsersStory";
 
 interface ArticleImageProps {
   src: string;

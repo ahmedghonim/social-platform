@@ -11,7 +11,7 @@ export default function HomePage() {
   const t = useTranslations("HomePage");
   return (
     <div className="flex">
-      <div className="w-[630px] mx-[31px] space-y-[14px]">
+      <div className="xl:w-[630px] xl:mx-[31px] w-full space-y-[14px]">
         <UsersStory />
         <SocialPost
           noComments
@@ -77,7 +77,7 @@ export default function HomePage() {
         </SocialPost>
       </div>
 
-      <div className="w-[350px] 2xl:me-[165px] me-[99px] flex flex-col gap-5">
+      <div className="w-[350px] 2xl:me-[165px] me-[99px] xl:flex flex-col gap-5 hidden ">
         <ProfileCard />
         <div className="sticky top-0 flex flex-col gap-5">
           <TrendingHashtags />
@@ -157,7 +157,7 @@ export const ArticleImage: React.FC<ArticleImageProps> = ({ src }) => {
       loading="lazy"
       src={src}
       alt="Social Media App Illustration"
-      className="object-contain  rounded-3xl max-w-full aspect-square size-[185px]"
+      className="object-contain  rounded-3xl max-w-full aspect-square xl:size-[185px] w-full"
     />
   );
 };

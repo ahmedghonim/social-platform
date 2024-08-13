@@ -5,6 +5,11 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "15mb",
+    },
+  },
 
   webpack(config) {
     config.module.rules.push({

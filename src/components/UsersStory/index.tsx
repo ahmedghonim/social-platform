@@ -7,6 +7,9 @@ import Frame from "@/svg/add_circle.svg";
 import { useRouter } from "@/lib/navigation";
 import { Carousel, CarouselContent, CarouselItem } from "@/ui/atoms/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { storyUpsert } from "@/actions/story";
+import { upload } from "@vercel/blob/client";
+import { put } from "@vercel/blob";
 
 const UsersStory = () => {
   const data = [
@@ -54,7 +57,7 @@ const UsersStory = () => {
     },
   ];
   return (
-    <div className="flex  relative  p-[15px] w-full bg-white rounded-[20px] shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
+    <div className="flex  relative  p-[15px] w-full xl:bg-white rounded-[20px] xl:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
       <Carousel
         opts={{
           align: "start",
@@ -69,7 +72,7 @@ const UsersStory = () => {
       >
         <CarouselContent>
           {data.map((item: any, index) => (
-            <CarouselItem key={index} className="basis-[13.3%]">
+            <CarouselItem key={index} className="xl:basis-[13.3%] basis-[20%] ">
               <Users {...item} />
             </CarouselItem>
           ))}
@@ -92,20 +95,57 @@ export const Users = ({
 }) => {
   const router = useRouter();
   return (
-    <button
-      className="relative flex flex-col gap-[9px] h-[88px] items-center w-[76px]"
-      onClick={() => router.push("/1")}
-    >
+    <button className="relative flex flex-col gap-[9px] h-[88px] items-center w-[76px]">
       {Boolean(numberOfStory) && (
         <div className="size-[63]">
           <StatusCircle color={color} no={numberOfStory} />
         </div>
       )}
       <div className="absolute top-[36%] -translate-x-1/2 start-[50.59%] -translate-y-1/2 size-[60px] p-1 flex items-center justify-center">
-        <Image src={Avatar} alt="Avatar" className="w-full h-full" />
-        {myAccount && <Frame className="absolute bottom-0 end-0 size-[18px]" />}
+        <Image
+          onClick={(e) => {
+            e.stopPropagation();
+            router.push("/1");
+          }}
+          src={Avatar}
+          alt="Avatar"
+          className="w-full h-full"
+        />
+        {myAccount && (
+          <form className="absolute bottom-0 end-0 ">
+            <label htmlFor="file-upload">
+              <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
+                <Frame className="size-[18px]" />
+              </span>
+            </label>
+            <input
+              id="file-upload"
+              type="file"
+              accept="image/*,.pdf"
+              className="hidden"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  const reader = new FileReader();
+                  reader.onload = (e: any) => {
+                    storyUpsert(e.target.result as string).then(() => {
+                      router.push("/1");
+                    });
+                  };
+                  reader.readAsDataURL(file);
+                }
+              }}
+            />
+          </form>
+        )}
       </div>
-      <span className="text-xs w-full overflow-hidden text-ellipsis whitespace-nowrap mt-auto">
+      <span
+        onClick={(e) => {
+          e.stopPropagation();
+          router.push("/1");
+        }}
+        className="text-xs w-full overflow-hidden text-ellipsis whitespace-nowrap mt-auto"
+      >
         {name}
       </span>
     </button>

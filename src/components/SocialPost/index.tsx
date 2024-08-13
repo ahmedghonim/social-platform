@@ -34,7 +34,7 @@ const SocialPost: React.FC<SocialPostProps> = ({
   noComments,
 }) => {
   return (
-    <article className="flex flex-col items-center p-[15px] w-full bg-white rounded-[20px] shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
+    <article className="flex flex-col items-center xl:p-[15px] p-2.5 w-full bg-white rounded-[20px] shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
       <div className="flex gap-5 justify-between w-full">
         <UserInfo user={user} />
         <div className="flex self-start">
@@ -49,7 +49,7 @@ const SocialPost: React.FC<SocialPostProps> = ({
       {image && (
         <Image
           src={image}
-          className="object-contain mt-2.5 max-w-full rounded-2xl aspect-square w-[600px]"
+          className="object-contain mt-2.5 max-w-full rounded-2xl aspect-square xl:w-[600px]"
           alt="Post content"
         />
       )}

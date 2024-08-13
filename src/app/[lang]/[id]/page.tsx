@@ -1,26 +1,20 @@
-"use client";
 import React from "react";
 import Logo from "@/svg/logo_2.svg";
-import Story from "@/components/Story";
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-} from "@/ui/atoms/carousel";
 import { EmblaOptionsType } from "embla-carousel";
-import Autoplay from "embla-carousel-autoplay";
 import image_30 from "@/image/image_30.png";
 import aqsa from "@/image/aqsa.png";
 import avatar from "@/image/avatar.png";
 import watch from "@/image/watch.png";
 import "./css/embla.css";
 import EmblaCarousel from "./EmblaCarousel";
+import { getStory } from "@/actions/story";
 
-function Page() {
+async function Page() {
+  const images = await getStory();
+
   const data = [
     {
-      images: [image_30, aqsa, watch],
+      images: [image_30, aqsa, ...images.map((image) => image.url)],
       name: "Ahmed Ghonim",
       image: avatar,
     },

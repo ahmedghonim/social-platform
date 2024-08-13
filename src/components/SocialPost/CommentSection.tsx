@@ -19,7 +19,7 @@ const CommentSection: React.FC = () => {
           replies={873}
         />
       </div>
-      <div className="flex flex-col items-start ms-[58px] max-w-full max-md:ml-2.5 ">
+      <div className="flex flex-col items-start max-sm:ps-[25px] ms-[58px] max-w-full max-md:ml-2.5 ">
         <div className="relative pt-5">
           <CommentCard username="Ibrahim Adm" content="social media poster" />
           <div className="absolute top-0 -start-5  h-[38%] w-[20px] border-secondary border-s-[2px] border-b-[2px] rounded-bl-full" />

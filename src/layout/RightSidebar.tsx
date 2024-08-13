@@ -24,7 +24,7 @@ const avatarData = [
 
 const RightSidebar: React.FC = () => {
   return (
-    <aside className="flex flex-col pt-[15px] gap-[15px] z-[-1] pb-11 w-[100px] bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.2)] max-md:hidden">
+    <aside className="flex flex-col pt-[15px] xl:gap-[15px] justify-evenly z-[-1] pb-11 w-[100px] bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.2)] max-md:hidden">
       <nav className="flex flex-col items-start gap-[15px] px-[15px]">
         <div className=" w-[50px] h-[50px]  rounded-full flex justify-center items-center bg-[#ECECEC]">
           <Chat_bubble />

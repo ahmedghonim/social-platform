@@ -16,15 +16,19 @@ const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav className="flex gap-[74px]  max-md:max-w-full items-center text-[10px]">
+    <nav className="flex xl:gap-[74px] justify-between xl:justify-normal  max-md:max-w-full items-center text-[10px]">
       {navItems.map((item, index) => (
         <div
           key={index}
-          className={`flex flex-col text-secondary-600 gap-1 items-center justify-center relative ${
-            item.active ? "text-primary" : ""
+          className={`flex  flex-col text-secondary-600 gap-1  items-center justify-center relative ${
+            item.active ? "!text-primary max-sm:gap-0.5" : ""
           }`}
         >
-          <span>
+          <span
+            className={cn("", {
+              " max-sm:bg-[#5E60FF]/10 rounded-[20px] px-2.5 py-1": item.active,
+            })}
+          >
             <item.icon
               className={cn("fill-current", {
                 "fill-primary": item.active,
@@ -33,7 +37,7 @@ const Navigation: React.FC = () => {
           </span>
           <div className="uppercase">{t(item.label)}</div>
           {item.active && (
-            <div className="flex bg-primary w-[60px] rounded-t-[20px] h-[3px] absolute bottom-[-8px] " />
+            <div className="xl:flex hidden bg-primary w-[60px] rounded-t-[20px] h-[3px] absolute bottom-[-8px] " />
           )}
         </div>
       ))}

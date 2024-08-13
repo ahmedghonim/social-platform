@@ -1,3 +1,4 @@
+"use client";
 import React, { useCallback, useEffect, useRef } from "react";
 import {
   EmblaCarouselType,
@@ -5,11 +6,6 @@ import {
   EmblaOptionsType,
 } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import {
-  NextButton,
-  PrevButton,
-  usePrevNextButtons,
-} from "./EmblaCarouselArrowButtons";
 import { useDotButton } from "./EmblaCarouselDotButton";
 import Story from "@/components/Story";
 import Arrow from "@/svg/arrow_circle_left.svg";
@@ -81,12 +77,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     },
     []
   );
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
+
   useEffect(() => {
     if (!emblaApi) return;
 

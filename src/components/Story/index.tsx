@@ -40,8 +40,9 @@ const Story = ({
             } else {
               if (selectedIndex < 7) {
                 emblaApi?.scrollTo(selectedIndex + 1);
+              } else {
+                emblaApi?.scrollTo(0);
               }
-
               return 100;
             }
           }
@@ -61,14 +62,30 @@ const Story = ({
         "flex relative flex-col w-full overflow-hidden duration-200 rounded-2xl h-full"
       )}
     >
-      <Image
-        loading="lazy"
-        src={images[currentImage]}
-        alt="Social media post content"
-        className={cn("object-cover absolute inset-0 z-0 h-full w-full", {
-          "filter blur-sm": off,
-        })}
-      />
+      {typeof images[currentImage][0] === "string" ? (
+        <img
+          width={523}
+          height={930}
+          loading="lazy"
+          src={images[currentImage]}
+          alt="Social media post content"
+          className={cn("object-cover absolute inset-0 z-0 h-full w-full", {
+            "filter blur-sm": off,
+          })}
+        />
+      ) : (
+        <Image
+          width={523}
+          height={930}
+          loading="lazy"
+          src={images[currentImage]}
+          alt="Social media post content"
+          className={cn("object-cover absolute inset-0 z-0 h-full w-full", {
+            "filter blur-sm": off,
+          })}
+        />
+      )}
+
       {!off ? (
         <div
           className={cn(

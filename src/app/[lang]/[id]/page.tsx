@@ -14,7 +14,7 @@ async function Page() {
 
   const data = [
     {
-      images: [image_30, aqsa, ...(images.map((image) => image.url) as any)],
+      images: [image_30, aqsa, ...images?.map((image: any) => image.url)],
       name: "Ahmed Ghonim",
       image: avatar,
     },

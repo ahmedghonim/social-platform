@@ -7,6 +7,10 @@ import TrendingHashtags from "@/components/TrendingHashtags";
 import ImportantThings from "@/components/ImportantThings";
 import PeopleYouMayKnow from "@/components/PeopleYouMayKnow";
 import Aqsa from "@/image/aqsa.png";
+import Image from "next/image";
+import UsersStory from "@/components/UsersStory";
+import ProductList from "@/components/ProductList";
+
 export default function HomePage() {
   const t = useTranslations("HomePage");
   return (
@@ -97,7 +101,7 @@ interface SocialLinkProps {
   imageSrc: any;
 }
 
-export const SocialLink: React.FC<SocialLinkProps> = ({
+const SocialLink: React.FC<SocialLinkProps> = ({
   title,
   description,
   url,
@@ -119,7 +123,7 @@ interface ArticleContentProps {
   url: string;
 }
 
-export const ArticleContent: React.FC<ArticleContentProps> = ({
+const ArticleContent: React.FC<ArticleContentProps> = ({
   title,
   description,
   url,
@@ -142,16 +146,11 @@ export const ArticleContent: React.FC<ArticleContentProps> = ({
   );
 };
 
-import React from "react";
-import Image from "next/image";
-import ProductList from "@/components/ProductList";
-import UsersStory from "@/components/UsersStory";
-
 interface ArticleImageProps {
   src: string;
 }
 
-export const ArticleImage: React.FC<ArticleImageProps> = ({ src }) => {
+const ArticleImage: React.FC<ArticleImageProps> = ({ src }) => {
   return (
     <Image
       loading="lazy"

@@ -14,7 +14,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
         <div className="mr-auto z-[-1] xl:block hidden ">
           <Sidebar />
         </div>
-        <div className="h-full overflow-y-auto hidden-scrollbar py-[20px] max-sm:b-[50px]">
+        <div className="h-full overflow-y-auto hidden-scrollbar py-[20px] max-sm:pb-[100px]">
           {children}
         </div>
         <RightSidebar />

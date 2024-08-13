@@ -12,7 +12,7 @@ const InteractionItem: React.FC<InteractionItemProps> = ({
   value,
 }) => {
   return (
-    <div className="flex flex-col text-sm">
+    <div className="flex flex-col xl:text-sm text-2.5">
       <img
         loading="lazy"
         src={icon}

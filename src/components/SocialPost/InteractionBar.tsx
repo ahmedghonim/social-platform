@@ -35,7 +35,7 @@ const InteractionBar: React.FC<InteractionBarProps> = ({ interactions }) => {
   ];
 
   return (
-    <div className="flex flex-wrap gap-5 justify-between items-start pb-px mt-2.5 max-w-full text-sm text-center min-h-[44px] text-neutral-700 w-[570px]">
+    <div className="flex xl:gap-5 justify-between items-start pb-px mt-2.5 max-w-full text-sm text-center min-h-[44px] text-neutral-700 w-[570px]">
       {interactionItems.map((item, index) => (
         <InteractionItem key={index} {...item} />
       ))}

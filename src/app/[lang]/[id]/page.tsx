@@ -9,11 +9,17 @@ import EmblaCarousel from "./EmblaCarousel";
 import { getStory } from "@/actions/story";
 
 async function Page() {
-  const images = await getStory();
+  const images = await getStory().catch((error) => {
+    console.error(error);
+  });
 
   const data = [
     {
-      images: [image_30, aqsa, ...images?.map((image: any) => image.url)],
+      images: [
+        image_30,
+        aqsa,
+        ...(images?.map((image: any) => image.url) as any),
+      ],
       name: "Ahmed Ghonim",
       image: avatar,
     },
